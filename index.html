@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    ></link>
+
+    <title>Learn JS</title>
+</head>
+
+<body>
+    <script src="js/jquery-1.12.0.min.js"></script>
+
+    <div class="container">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <button id="btn">Жми</button>
+            <input id="num" type="text" value="">  
+        <script>
+            
+            var elem = document.getElementsByTagName('p');
+            var btn= document.getElementById('btn');
+            btn.addEventListener('click', func);
+
+            function func() {
+                var arr2 = [];
+                for (var i = 0; i< elem.length; i++) {
+                    arr2[i] = elem[i].innerHTML;
+                    console.log(arr2[i]);
+                }
+               
+                var input = document.getElementById('num');
+                input.value = arr2.sort();
+            }
+
+            // function sortArr(a, b) {
+            //     if (a > b) {
+            //         return -1;
+            //     }
+            //     if (a < b) {
+            //         return -1;
+            //     }
+            //     if (a == b) {
+            //         return 0;
+            //     }
+            // }   
+
+            // for (var i = 1; i <= 9; i++) {
+            //     for (var j = 1; j <= 4; j++) {
+            //         document.write(i); //выводит '111', потом '222', потом '333' и так далее
+            //     }
+            // }
+
+            
+            // var a = 3;
+			// document.write(a);
+			// document.write('<br/>');
+			// ////////////////////////
+			// var b = 5;
+			// var c = 6;
+			// document.write(b+c);
+			// document.write('<br/>');
+			// document.write(b*c);
+			// document.write('<br/>');
+			// document.write(b/c);
+			// document.write('<br/>');
+			// ////////////////////////
+			// var d = 10;
+			// var e = 20;
+			// var result = (d + e);
+			// document.write(result);
+			// document.write('<br/>');
+			// ////////////////////////
+			// var g = 15;
+			// var h = 18;
+			// var c = (g - h);
+			// var k = 10;
+			// var result = (c + k);
+			// document.write(result);
+
+			// Задача_1
+			// var obj = {a: 1, b: 2, c: 3};
+			// document.write(obj['c']);
+			// document.write(obj.c);
+			// document.write('<br/>');
+
+			// Задача_2
+			// var obj = {Коля: '1000', Вася: '500', Петя: '200'};
+			// document.write(obj['Коля']+', '+ obj['Петя']);
+			// document.write('<br/>');
+
+			// Задача_3
+			// var obj = {1: 'Понедельник', 2: 'Вторник', 3: 'Среда', 4: 'Четверг', 5: 'Пятница', 6: 'Суббота',  7: 'Воскресенье'};
+			// document.write(obj['1']);
+			// document.write('<br/>');
+
+			// Задача_4
+			// var obj = {1: 'Понедельник', 2: 'Вторник', 3: 'Среда', 4: 'Четверг', 5: 'Пятница', 6: 'Суббота',  7: 'Воскресенье'};
+			// var day = 3;
+			// document.write(obj[day]);
+			// document.write('<br/>');
+
+			// Задачи по многомерным массивам
+			//Задача_1
+			// var arr =  [ [1, 2, 3], [4, 5, 6], [7,8,9] ];
+			// document.write(arr[1][0]);
+			// document.write('<br/>');
+
+			// Задача_2
+			// var lang = {js:['jQuery', 'Angular'], php: 'hello', css: 'world'};
+			// document.write(lang['js'][0]);
+			// document.write('<br/>');
+
+			// Задача_3
+			// var days = {
+			// 	ru:['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота',  'Воскресенье'],
+			// 	en:['Monday', 'Tyesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',  'Sunday']
+			// };
+			// document.write(days['ru'][0]+ ', ' + days['en'][2]);
+			// document.write('<br/>');
+
+			// Задача_4
+			// var days = {
+			// 	ru:['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота',  'Воскресенье'],
+			// 	en:['Monday', 'Tyesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',  'Sunday']
+			// };
+			// var lang = days.ru;
+			// var day = 2;
+			// document.write(lang[day]);
+			// document.write('<br/>');
+
+			/* IF ELSE
+			============================================================= */
+            // http://theory.phphtml.net/tasks/javascript/base/rabota-s-konstrukciyami-if-else-switch-case-v-javascript.html
+
+            // var a = 4;
+            // if(a == 0 || a == 2){
+            // 	var a = a + 7;
+            // 	document.write(a);
+            // }
+            // else{
+            // 	var a = a / 7;
+            // 	document.write(a);
+            // }
+
+            // var num = 2;
+            // switch (num){
+            // 	case 1: result = 'зима';
+            // 	break;
+            // 	case 2: result = 'весна';
+            // 	break;
+            // 	case 3: result = 'лето';
+            // 	break;
+            // 	case 4: result = 'осень';
+            // 	break;
+            // }
+            // document.write(result);
+            // document.write('<br/>');
+
+            // Задача_16
+            // var day = 23;
+            // if (day <= 10){
+            // 	var decad = 1;
+            // }
+            // if (day >= 11 && day <= 20){
+            // 	var decad = 2;
+            // }
+            // if (day >= 21 && day <=30){
+            // 	var decad = 3;
+            // }
+            // document.write(decad);
+            // document.write('<br/>');
+
+            //  // Задача_17
+            //  var month = 11;
+            //  if (month == 12 || month <= 2){
+            //  	var result = 'Зима'; 
+            //  }
+            //  if(month >= 3 && month <=5){
+            //  	result = 'весна';
+            //  }
+            //  if(month >=6 && month <=8){
+            //  	result = 'лето';
+            //  }
+            //  if(month >=9 && month <=11){
+            //  	result = 'осень';
+            //  }
+            //  document.write(result);
+            //  document.write('<br/>');
+
+            //  // Задача_18 - Эту задачу не смог решить, но логику понял
+            //  var year = 2000;
+            //  if (year % 4 == 0 || (year % 400 == 0 && year % 100 != 0)) {
+            //  	document.write('Високосный');
+            //  } else {
+            //  	document.write('Не високосный');
+            //  }
+            //  document.write('<br/>');
+
+            //  // Задача_19
+            //  var symbol = 'abcde';
+            //  if (symbol.charAt(0) === 'a'){
+            //  	document.write('да');
+            //  }
+            //  else{
+            //  	document.write('нет');
+            //  }
+            //  document.write('<br/>');
+
+            //   // Задача_20
+            //   var number = '12345';
+            //   if(number.charAt(0) == '1' || number.charAt(0) == '2' || number.charAt(0) == '3' ){
+            //   	document.write('да');
+            //   }
+            //   else{
+            //   	document.write('нет');
+            //   }
+            //   document.write('<br/>');
+
+            //   // Задача_21 (2 варианта) Мне кажется тут я написал гавнокод, жду комментарий)
+            //   var numb = '123';
+            //   // result = + numb.charAt(0) + + numb.charAt(1) + + numb.charAt(2);
+            //   result = Number(numb.charAt(0)) + Number(numb.charAt(1)) + Number(numb.charAt(2));
+            //   document.write(result);
+            //   document.write('<br/>');
+
+            //   // Задача_22
+            //   var num = '222222';
+            //   result_1 = Number(num.charAt(0)) + Number(num.charAt(1)) + Number(num.charAt(2));
+            //   result_2 = Number(num.charAt(3)) + Number(num.charAt(4)) + Number(num.charAt(5));
+            //   if(result_1 == result_2){
+            //   	document.write('да');
+            //   }
+            //   else{
+            //   	document.write('нет');
+            //   }
+            //   document.write('<br/>');
+
+            //   //Задача_23
+            //   var domen = 'http://phphtml.net';
+            //   if (domen[0]=='h' && domen[1] == 't' && domen[2] == 't' && domen[3] == 'p'){
+            //   	document.write('да');
+            //   }
+            //   else{
+            //   	document.write('нет');
+            //   }
+            //   document.write('<br/>');
+
+              /* for while 
+              http://theory.phphtml.net/books/javascript/base/rabota-s-ciklami-for-i-while-v-javascript.html
+              =======================================*/
+              // var num = 1;
+
+              // while(num <= 100){
+              // 	document.write(num+'<br>');
+              // 	num ++;
+              // }
+
+              // for (var num = 1; num <= 100; num++){
+              // 	document.write(num+'<br>');
+              // }
+
+
+              // for (var num = 11; num <= 33; num++){
+              // 	document.write(num+'<br>');
+              // }
+
+              // var num = 11;
+
+              // while(num <= 33){
+              // 	document.write(num+'<br>');
+              // 	num ++;
+              // }
+
+              // var num = 1;
+              // while (num < 100){
+              // 	if(num % 2 === 0){
+              // 		document.write(num+'<br>');
+              // 	}
+              // 	num++;
+              // }
+
+              //  С помощью цикла найдите сумму чисел от 1 до 100. 
+              // var num = 1;
+              // var result = 1;
+              // for (var num = 0; num < 100;	num++){
+              // 	result = result + num;
+              // }
+              // document.write(result);
+              // document.write('<br>');
+
+              //  Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for выведите все эти элементы на экран
+              // var arr = ['1','2','3','4','5'];
+              // for (var i =0; i < arr.length; i++){
+              // 	document.write(arr[i]);
+              // }
+
+              //Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for найдите сумму элементов этого массива. Запишите ее в переменную result
+              // var arr = [1,2,3,4,5];
+              // var result = 0;
+              // for (var i =0; i < arr.length; i++){
+              // 	result = result + arr[i];
+              // }
+              // document.write(result);
+
+              //  Дан объект obj. С помощью первого цикла for-in выведите на экран ключи, с помощью второго - элементы.
+              // var obj = {green: 'зеленый', red: 'красный', blue: 'голубой'}
+              // for (key in obj) {
+              // 	document.write(key + ', '); 
+              // }
+              // for (key in obj) {
+              // 	document.write(obj[key] + ', '); 
+              // }
+              // document.write('<br/>');
+
+			//	Дан объект obj с ключами Коля, Вася, Петя с элементами '200', '300', '400'. С помощью цикла for-in выведите на экран строки такого формата: 'Коля - зарплата 200 долларов.'.
+			// var obj = {Коля: '200', Вася: '300', Петя: '400'}
+			// for(key in obj){
+			// 	document.write(key + '- зарплата ' + obj[key] + ' долларов' +' ')
+			// }
+
+			/*=======================================*/
+			//Задачи на циклы while, for в JavaScript
+
+			//  Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.
+			// var num = [2, 15, 9, 15, 0, 4];
+			// for (var i = 0; i < num.length; i++) {
+			// 	if(i > 3 && i < 10){
+			// 		document.write(num[i]+'<br/>');
+			// 	}
+			// }
+
+			// Дан массив с числами. Числа могут быть положительными и отрицательными. Найдите сумму положительных элементов массива. 
+			// var numbers = [-2, 5, 1, -5, -1, 1, 3, 4, -1];
+			// var result = 0; 
+			// 	for (var i = 0; i < numbers.length; i++) {
+			// 	if(numbers[i] >= 0){
+			// 		result = result + numbers[i];
+			// 	}
+			// }
+			// document.write(result);
+
+			//Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла foreach и оператора if проверьте есть ли в массиве элемент со значением, равным 4. Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо.
+			// var arr = [1, 2, 5, 9, 4, 13, 4, 10];
+			// for (var i = 0; i < arr.length; i++){
+			// 	if(i == 4){
+			// 		document.write('Есть!');
+			// 		break;
+			// 	}
+			// }
+
+			// 	Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только те числа из массива, которые начинаются на цифру 1, 2 или 5. 
+
+			/* Комментарий - Ощущение, что решил костыльным путем */
+			// var numbers = [10, 20, 30, 50, 235, 3000];
+			// var c = numbers.length;
+			// for (var i = 0; i < c; i++){
+			// 	str = numbers[i] + "";
+			// 	if(str[0] === '1'|| str[0] === '2'|| str[0] === '5'){
+			// 		document.write(numbers[i]+', ');
+
+			// 	}
+			// }
+
+			//Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку '-1-2-3-4-5-6-7-8-9-
+			// var arr = [1,2,3,4,5,6,7,8,9]; 
+			// var b = arr.length;
+			// var c = ' ';
+			// for (var i = 0; i < b; i++){
+			// 	c = c + '-' + arr[i];
+			// }
+			// document.write(c + '-');
+
+			//Составьте массив дней недели. С помощью цикла for выведите все дни недели, а выходные дни выведите жирным.
+			// var days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+			// var b = days.length;
+			// for(var i = 0; i < b; i++){
+			// 	if(i == 5 || i == 6){
+			// 		document.write('<strong>'+ days[i]+'</strong><br>');
+			// 	}
+			// 	else{
+			// 		document.write(days[i]+' ');
+			// 	}
+			// }
+
+			//Составьте массив дней недели. С помощью цикла for выведите все дни недели, а текущий день выведите курсивом. Текущий день должен храниться в переменной day.
+			// var week = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+			// var b = week.length;
+			// var day = 0;
+			// for(var i = 0; i < b; i++){
+			// 	if(i == day){
+			// 		document.write('<em>'+ week[i] + '</em>' + ' ' );
+			// 	}
+			// 	else{
+			// 		document.write(week[i]+' ');
+			// 	}
+			// }
+
+			//Дано число n=1000. Делите его на 2 столько раз, пока результат деления не станет меньше 50. Какое число получится? Посчитайте количество итераций, необходимых для этого (итерация - это проход цикла), и запишите его в переменную num.
+			/* тут чо то тормознул, посмотрел ответ, наверное позднее время сказалось, второй час ночи */
+			// var n = 1000;
+			// var num = 0;
+			// while (n > 50) {
+			// 	num++;
+			// 	n = n / 2;
+			// }
+			// document.write(n);
+			// document.write('<br/>')
+			// document.write(num);
+
+			/*===========================================
+			=============================================*/
+
+			//Задачи на математические функции JavaScript
+
+			// var a = 10;
+			// var b =3;
+			// var result = a % b;
+			// document.write(result);
+
+			// var a = 10;
+			// var b = 3;
+			// var rest = a % b;
+			// if (rest != 0) {
+			// 	document.write('Делится с остатком '+rest);
+			// } else {
+			// 	document.write('Делится, результат деления: '+(a / b));
+			// }
+
+			// var a = 20;
+			// var b = 15;
+			// document.write(Math.abs(b-a));
+
+            // Задачи математические ф-ии http://theory.phphtml.net/tasks/javascript/base/rabota-s-matematicheskimi-funkciyami-v-javascript.html
+
+            // Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79. 
+            // var arr = [12, 15, 20, 25, 59, 79];
+            // // var arr = [2, 2, 2,];
+            // var a = arr.length;
+            // var result = 0;
+            // for(var i = 0; i < a; i++){
+            // 	result = (result + arr[i]);
+            // }
+            // document.write(result / 6);
+
+            // Напишите скрипт, который будет находить факториал числа. Факториал (обозначается !) - это произведение всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4. 
+            // var a = 4,
+            // b = 1;
+
+            // if(a == 0){
+            // 	document.write('Факториал числа 0! = 1');
+            // }
+            // else{
+            // 	for(var i = 1; i <= a; i++){
+            // 		b*=i;
+            // 	}
+            // 	document.write('Факториал числа '+a+'! = '+ b);
+
+            // } 
+
+            //Напишите скрипт, который проверяет, является ли данное число простым (простое число - это то, которое делится только на 1 и на само себя). 
+
+            // Напишите скрипт, который найдет все простые числа в заданном промежутке. Проверьте его работу на промежутке от 1 до 1000. 
+
+            // var a = 1; 
+            // var b = 1000; 
+            // var result = ''; 
+
+            // for(i = a; i < b ; i++) 
+            // {
+            // 	for(c = 2; c < i; c++) 
+            // 	{
+
+            // 		if(i % c == 0)
+            // 		{
+            // 			break; 
+            // 		}
+
+            // 		if(i == c + 1) 
+            // 		{
+            // 			result += i + ', ' ; 
+            // 		}
+            // 	}
+            // }
+            // document.write('простые числа: ' + result);
+
+			// 	Напишите скрипт, который будет разлагать заданное число на простые множители. 
+			
+			// var num = 100; 
+			// var result = ''; 
+
+			// for(var i = 2; i <= num; i++){
+			// 	if(num % i == 0){
+			// 		result = result + i + ', '; 
+			// 		num = num / i; 
+			// 		i = 1; 
+			// 	};
+			// }
+			// document.write('простые множители: ' + result);
+
+            // var str = '12345';
+            // var arr = str.split('');
+
+            // var sum = 0;
+            // for (var i = 0; i < arr.length; i++) {
+            //     sum = sum + Number(arr[i]);
+            // }
+
+            // document.write(sum);
+
+            // var str = 'Мне очень нравится JavaScript';
+            // document.write(str.substr(10));
+
+            /* Задачи на работу со строками
+            ===============================================
+            ===============================================*/ 
+
+            // var str = '2025-12-31';
+            // var arr = str.split('-');
+            // var newStr = arr[2]+'.'+arr[1]+'.'+arr[0];
+            // document.write(newStr);
+
+            // var arr = ['я', 'учу', 'javascript', '!'];
+            // alert(arr.join('+'));
+
+            // var str = 'я учу javascript!';
+            // var first = str.slice(0, 1).toUpperCase() + str.slice(1);
+            // document.write(first);
+
+            // var str = 'я учу javascript!';
+            // var arr = str.split(' ');
+            // for (var i = 0; i < arr.length; i++) {
+            //     arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+            // }
+            // alert(arr);
+            
+            // var str = 'var_test_text';
+            // var arr = str.split('_');
+            // for (var i = 0; i < arr.length; i++) {
+            //     if (arr[0] != arr[i]) {
+            //         arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+            //     }
+            // }
+            // var result = arr.join('');
+            // document.write(result);
+            
+
+            /* Функции для работы с массивами
+            ===================================================
+            ===================================================*/
+               // arr = ['a','b','c'];
+               // arr.reverse();
+               // document.write(arr);
+               // document.write('<br/>');
+
+               // arr.push('d','e');
+               // document.write(arr);
+               // document.write('<br/>');
+
+               // arr.unshift('i', 'k');
+               // document.write(arr);
+               // document.write('<br/>');
+
+               // var arr = ['1', '2', '3', '4', '5', '6'];
+               // var result = [];
+
+                // while (arr.length > 0) { //массив уменьшается в цикле пока не достигнет нуля
+                //     var first = arr.shift();
+                //     var last = arr.pop();
+                //     var str = first+last; //тут будет строка '16', потом '25', потом '34'
+                //     result.push(str);
+                // }
+                // document.write(result);
+                // После цикла в result лежит массив ['16', '25', '34']. Сольем его в строку:
+                // result = result.join('-');
+                // document.write(result);
+
+                 // var arr = ['1', '2', '3', '4', '5', '6'];
+                 // var result = arr.slice(2,5);
+                 // document.write(result);
+
+                 // var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+                 // arr.splice(-2, 1);
+                 // document.write(arr);
+
+                //  var arr = ['a', 'b', 'c', 'd', 'e'];
+
+                //  arr.forEach(function(elem, index) {
+                //     document.write(index + '. ' + elem + '<br>');
+                // });
+
+                // function sortArr(a,b){
+                //     if(a > b)
+                //         return -1; 
+                //     if(a < b)
+                //         return 1; 
+                //     if(a==b)
+                //         return 0 ;
+                // }
+
+                // var arr = [43,-3, 10, 100];
+                // document.write(arr.sort(sortArr));
+
+
+                /* Задачи функции по работе с массивами
+                ===========================================*/
+                //  Даны два массива: [1, 2, 3] и [4, 5, 6]. Объедините их вместе.
+                // arr1 = ['1','2','3'];
+                // arr2 = ['4','5','6'];
+                // var c = arr1.concat(arr2);
+                // document.write(c);
+
+                // Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1]
+                // arr1 = ['1','2','3'];
+                // arr2 = arr1.reverse();
+                // document.write(arr2);
+
+                // Дан массив [1, 2, 3]. Добавьте ему в конец элементы 4, 5, 6
+                // arr1 = ['1','2','3'];
+                // arr1.push('4','5','6');
+                // document.write(arr1);
+
+
+                // Дан массив [1, 2, 3]. Добавьте ему в начало элементы 4, 5, 6
+                // arr1 = ['1','2','3'];
+                // arr1.unshift('4','5','6');
+                // document.write(arr1);
+
+                // Дан массив ['js', 'css', 'jq']. Выведите на экран первый элемент
+                // var arr = ['js', 'css', 'jq'];
+                // var arr2 = arr.shift();
+                // document.write(arr2);
+
+                 // Дан массив ['js', 'css', 'jq']. Выведите на экран последний элемент
+                 // var arr = ['js', 'css', 'jq'];
+                 // var arr2 = arr.pop();
+                 // document.write(arr2);
+
+                 // Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [1, 2, 3].
+                 // var arr = [1, 2, 3, 4, 5];
+                 // document.write(arr.slice(0,3));
+
+                 // Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [4, 5]
+                 // var arr = [1, 2, 3, 4, 5];
+                 // var arr2 = arr.slice(3);
+                 // document.write(arr2);
+
+                 // Дан массив [1, 2, 3, 4, 5]. С помощью метода splice преобразуйте массив в [1, 4, 5].
+                 // var arr = [1, 2, 3, 4, 5];
+                 // arr.splice(1,2);
+                 // document.write(arr);
+
+                 // Дан массив [1, 2, 3, 4, 5]. С помощью метода splice запишите в новый массив элементы [2, 3, 4]
+                 // var arr = [1, 2, 3, 4, 5];
+                 // var result = arr.splice(1, 3);
+                 // document.write(result);
+
+                 // Дан массив [1, 2, 3, 4, 5]. С помощью метода splice сделайте из него массив [1, 2, 3, 'a', 'b', 'c', 4, 5]
+
+                 // var arr = [1, 2, 3, 4, 5];
+                 // arr.splice(3, 0, 'a','b','c');
+                 // document.write(arr);
+
+                 // Дан массив [1, 2, 3, 4, 5]. С помощью метода splice сделайте из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e']
+                 // var arr = [1, 2, 3, 4, 5];
+                 // arr.splice(1, 0, 'a','b');
+                 // arr.splice(6, 0, 'c');
+                 // arr.splice(8, 0, 'e');
+                 // document.write(arr);
+
+                // Дан массив [3, 4, 1, 2, 7]. Отсортируйте его.
+                // var arr = [3, 4, 1, 2, 7];
+                // arr.sort();
+                // document.write(arr);
+
+                // Дан объект {js:'test', jq: 'hello', css: 'world'}. Получите массив его ключей.
+                // var arr = {js:'test', jq: 'hello', css: 'world'};
+                // var result = Object.keys(arr);
+                // document.write(result);
+
+
+
+                /* Отработка стандартных функций JavaScript
+                ===============================================*/
+
+                // Дана строка. Сделайте заглавным первый символ этой строки не используя цикл. Найдите два решения
+                // var str = 'строка';
+                // var first = str.substr(0,1);
+                // first = first.toUpperCase();
+                // var newStr = str.replace('с', first);
+                // document.write(newStr);
+
+                // var str = 'строка';
+                // var arr = str.split('');
+                // arr[0] = arr[0].toUpperCase();
+                // var str = arr.join('');
+                // document.write(str);
+
+                // Дана строка. Сделайте заглавным последний символ этой строки не используя цикл. Найдите два решения.
+                // var str = 'строка';
+                // var first = str.substr(-1,1);
+                // // document.write(first);
+                // first = first.toUpperCase();
+                // var newStr = str.replace('а', first);
+                // document.write(newStr);
+
+                // var str = 'строка';
+                // var arr = str.split('');
+                // arr[5] = arr[5].toUpperCase();
+                // var str = arr.join('');
+                // document.write(str);
+
+                // Дана строка, например, '123456'. Переверните эту строку (сделайте из нее '654321') не используя цикл.
+                // var str = '123456';
+                // var arr = str.split('');
+                // arr.reverse();
+                // var str = arr.join('');
+                // document.write(str);
+
+                // Дано число, например, 3751. Отсортируйте цифры в нем (сделайте из него 1357) не используя цикл.
+                // var str = '3751';
+                // var arr = str.split('');
+                // arr.sort()
+                // str = arr.join('');
+                // document.write(str);
+
+                // Проверьте, что строка начинается на http://
+                // var str = 'http://site.ru';
+                // var newStr = str.substr(0,7);
+                // if (newStr == 'http://'){
+                //     console.log(true);
+                // }
+                // else{
+                //     console.log(false);
+                // }
+
+                // Проверьте, что строка заканчивается на .html
+                // var str = 'index.html';
+                // var newStr = str.substr(5);
+                // if (newStr == '.html'){
+                //     console.log(true);
+                // }
+                // else{
+                //     console.log(false);
+                // }
+                
+                // Дана строка вида '/folder1/folder2/folder3/folder4/'. Строки между слешеми могут быть любыми. Получите содержимое второго блока (в нашем случае 'folder2').
+                // var str = '/folder1/folder2/folder3/folder4/';
+                // console.log(str.indexOf('/', 8));
+                // console.log(str.indexOf('/', 9));
+                // console.log(str.slice(8, 17));
+
+                // Дана строка вида '/folder1/folder2/folder3/folder4/'. Строки между слешеми могут быть любыми. Получите содержимое второго блока с конца (в нашем случае 'folder3').
+                // var str = '/folder1/folder2/folder3/folder4/';
+                // console.log(str.lastIndexOf('/', 26));
+                // console.log(str.lastIndexOf('/', 22));
+                // console.log(str.slice(16, 25));
+
+                // Дана строка вида '/folder1/folder2/folder3/folder4/'. Строки между слешеми могут быть любыми. Удалите из нее блок с заданным номером. Найдите два решения, оба без цикла.
+                // var str = '/folder1/folder2/folder3/folder4/';
+                // console.log(str.indexOf('/', 7));
+                // console.log(str.indexOf('/', 9));
+                // console.log(str.slice(8, 17));
+
+                // var str = '/folder1/folder2/folder3/folder4/';
+                // var arr = str.split('');
+                // arr.splice(0, 8);
+                // arr.splice(9);
+                // str = arr.join('');
+                // console.log(str);
+
+                /* Задачи на основы работы с пользовательскими функциями в JavaScript 
+                ======================================================================*/ 
+
+                // Сделайте функцию, которая возвращает квадрат числа. Число передается параметром. 
+                // function cube(num) { 
+                // return num * num; 
+                // } 
+                // var message = cube(4); 
+                // console.log(message); 
+
+                // Сделайте функцию, которая возвращает сумму двух чисел. 
+                // function plus(x, y) { 
+                // num = x + y; 
+                // } 
+                // plus(6,6); 
+                // console.log(num); 
+
+                // Сделайте функцию, которая отнимает от первого числа второе и делит на третье. 
+                // function plus(x, y, z) { 
+                // num = (x - y) / z; 
+                // } 
+                // plus(8,4,2); 
+                // console.log(num); 
+
+                // Сделайте функцию, которая принимает параметром число от 1 до 7, а возвращает день недели на русском языке. 
+                // function week(day) { 
+                // var obj = {1: 'пн', 2: 'вт', 3: 'ср', 4: 'чт', 5: 'пт', 6: 'сб', 7: 'вс'}; 
+                // return obj[day]; 
+                // } 
+                // days = week(2); 
+                // console.log(days);
+
+
+                /*Задачи на приемы работы с флагами
+                ==================================================
+                ==================================================*/
+
+                // Дан массив с числами. Проверьте, что в этом массиве есть число 5. Если есть - выведите 'да', а если нет - выведите 'нет'.
+                // var arr = [1,2,3,4,5];
+                // var flag = false;
+                // for (var i = 0; i < arr.length; i++) {
+                //     if (arr[i] == 5){
+                //         flag = true;
+                //         break;
+                //     }
+                // }
+                // if (flag == true){
+                //     console.log('yes');
+                // }
+                // else{
+                //    console.log('no'); 
+                // }
+
+
+                // Дано число, например 31. Проверьте, что это число не делится ни на одно другое число кроме себя самого и единицы. То есть в нашем случае нужно проверить, что число 31 не делится на все числа от 2 до 30. Если число не делится - выведите 'false', а если делится - выведите 'true'.
+                // var num = 31;
+                // var flag = false;
+                // for (var i = 2; i < num; i++) {
+                //     if (num % i == 0) {
+                //         flag = true;
+                //         break;
+                //     }
+                // }
+
+                // if (flag == true) {
+                //     console.log('true');
+                // } else {
+                //     console.log('false');
+                // }
+
+                // Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть - выведите 'да', а если нет - выведите 'нет'.
+                // var arr = [1, 2, 3, 3, 4, 5];
+                // var flag = false;
+                // for (var i = 1; i < arr.length; i++) {
+                //     if (arr[i] == arr[i-1]) {
+                //         flag = true;
+                //         break;
+                //     }
+                // }
+
+                // if (flag == true) {
+                //     alert('Да');
+                // } else {
+                //     alert('Нет');
+                // }
+
+                // Сделайте функцию, которая параметрами принимает 2 числа. Если эти числа равны - пусть функция вернет true, а если не равны - false.
+                // function func(a, b) {
+                //     return a == b;
+                // }
+                // console.log(func);
+
+                // Сделайте функцию, которая параметрами принимает 2 числа. Если их сумма больше 10 - пусть функция вернет true, а если нет - false.
+                // function func(a, b) {
+                //     return a + b > 10;
+                // }
+
+                // Сделайте функцию, которая параметром принимает число и проверяет - отрицательное оно или нет. Если отрицательное - пусть функция вернет true, а если нет - false.
+                // function func(num) {
+                //     return num < 0;
+                // }
+
+                
+                /* Задачи на приемы работы с циклами
+                ==============================================*/
+                //  Выведите на экран таблицу умножения (как в школьной тетради).
+                // document.write("<table border='1'>"); 
+                // for (i=1; i<=10; i++) { 
+                //     for (j=1; j<=10; j++) document.write("<td>"+i*j+"</td>"); 
+                //         document.write("</tr>"); 
+                // }
+
+                // С помощью цикла for сформируйте строку '123456789' и запишите ее в переменную str
+                // var str = '';
+                // for (var i = 1; i < 10; i++){
+                //     str = str + i;
+                // }
+                // document.write(str);
+
+                // С помощью цикла for сформируйте строку '987654321' и запишите ее в переменную str
+                // var str = '';
+                // for (var i = 9; i > 0; i--){
+                //     str = str + i;
+                // }
+                // document.write(str);
+
+                //  С помощью цикла for сформируйте строку '-1-2-3-4-5-6-7-8-9-' и запишите ее в переменную str.
+                // var str = '';
+                // for (var i = 1; i < 10; i++){
+                //     str = str + i + '-';
+                // }
+                // document.write(str);
+
+                // Нарисуйте пирамиду, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+                // var str = '';
+                // for (var i = 0; i < 20; i++) {
+                //     str = str + 'x';
+                //     document.write(str + '<br>');
+                // }
+
+                //  С помощью двух вложенных циклов нарисуйте следующую пирамидку:
+                // for (var i = 1; i <= 9; i++) {
+                //     for (var j = 1; j <= i; j++) {
+                //         document.write(i);
+                //     }
+                //     document.write('<br>');
+                // }
+
+                // Нарисуйте пирамиду, как показано на рисунке, воспользовавшись циклом for:
+                // var str = '';
+                // for(var i = 0; i <= 10; i++) {
+                //     str += 'xx';
+                //     document.write(str + '<br>');
+                // }
+
+
+               /* Задачи на приемы работы с массивами
+               ===================================================*/
+               
+               // Заполните массив следующим образом: в первый элемент запишите 'x', во второй 'xx', в третий 'xxx' и так далее.
+               // var arr = [];
+               // str = 'x';
+               // for (var i = 0; i < 10; i++) {
+               //      arr.push(str);
+               //      str = str + 'x';
+               //  }
+               //  document.write(arr);
+
+               // Заполните массив следующим образом: в первый элемент запишите '1', во второй '22', в третий '333' и так далее.
+               // var arr = [];
+               // for (var i = 1; i < 10; i++) {
+               //      var str = '';
+               //      for (var j = 0; j < i; j++) {
+               //          str += i;
+               //      }
+               //      arr.push(str);
+               //  }
+               //  document.write(arr);
+
+               // Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями. Первым параметром функция принимает значение, которым заполнять массив, а вторым - сколько элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+               //   function arrayFill(value, length) { 
+               //        var arr = [];
+               //        for (var i = 0; i < length; i++) {
+               //            arr.push(value);
+               //        }
+               //        return arr;
+               //    }
+
+               // document.write(arrayFill('x', 5));
+
+               // Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
+               // function func(arr) {
+               //      var sum = 0;
+               //      for (var i = 0 ; i < arr.length; i++) {
+               //          sum += arr[i];
+               //          if (sum > 10) {
+               //              return i + 1; 
+               //          }
+               //      }
+               //  }
+               //  document.write(func([1, 2, 3, 4, 5, 6, 7, 8, 9])); 
+
+               // Дан массив с числами. Не используя метода reverse переверните его элементы в обратном порядке.
+                //    var arr = [1, 3, 5, 6, 7, 9];
+                //    var result = [];
+                //    for (var i = arr.length - 1; i >= 0; i--) {
+                //     result.push(arr[i]);
+                // }
+                // document.write(result);
+
+                // Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+                // var arr = [[1, 2, 3], [4, 5], [6]];
+                // var sum = 0;
+                // for (var i = 0; i < arr.length; i++) {
+                //     for (var j = 0; j < arr[i].length; j++) {
+                //         sum += arr[i][j];
+                //     }
+                // }
+                // document.write(sum);
+
+                // Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+                // var arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+                // var sum = 0;
+                // for (var i = 0; i < arr.length; i++) {
+                //     for (var j = 0; j < arr[i].length; j++) {
+                //         for (var k = 0; k < arr[i][j].length; k++) {
+                //             sum += arr[i][j][k];
+                //         }
+                //     }
+                // }
+                // document.write(sum);
+
+                /* Правильное использование пользовательских функций
+                ========================================================
+                ===================================================== */
+
+                //  Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
+                // function isNumberInRange(num){
+                //     if(num > 0 && num < 10 ){
+                //         return true;
+                //     } else{
+                //         return false;
+                //     }
+                // }
+
+                // Дан массив с числами. Запишите в новый массив только те числа, которые больше нуля и меньше 10-ти. Для этого используйте вспомогательную функцию isNumberInRange из предыдущей задачи.
+                // var arr = [2,3,6,7,89,23,45];
+                // var result = [];
+                // for (var i = 0; i < arr.length; i++) {
+                //     if (isNumberInRange(arr[i])) {
+                //         result.push(arr[i]);
+                //     }
+                // }
+
+                // document.write(result);
+
+                // Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
+                // function getDigitsSum(num) {
+                //     var num = String(num);
+                //     var sum = 0;
+                //     for (var i = 0; i < num.length; i++) {
+                //         sum += Number(num[i]);
+                //     }
+                //     return sum;
+                // }
+
+                // document.write(getDigitsSum(4567));
+
+                // Найдите все года от 1 до 2017, сумма цифр которых равна 13. Для этого используйте вспомогательную функцию getDigitsSum из предыдущей задачи.
+                // for (var i = 1; i < 2017; i++) {
+                //     if (getDigitsSum(i) == 13) {
+                //         document.write(i);
+                //     }
+                // }
+
+                //  Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+                // function isEven(num) {
+                //     if (num % 2 == 0) {
+                //         return true;
+                //     } else {
+                //         return false;
+                //     }
+                // }
+
+                // Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+                // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                // var result = [];
+                // for (var i = 0; i < arr.length; i++) {
+                //     if(isEven(arr[i])) {
+                //         result.push(arr[i]);
+                //     }
+                // }
+
+                // document.write(result);
+
+                // Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+                // function getDivisors(num) {
+                //     var arr = [];
+                //     for (var i = 1; i <= num; i++) {
+                //         if (num % i == 0) {
+                //             arr.push(i);
+                //         }
+                //     }
+
+                //     return arr;
+                // }
+
+                // document.write(getDivisors(6));
+
+
+// Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+                // var userWorkString = 'var_text_hello_my_world';
+                // function firstCapitalLetterInWord(str) {
+                //     var firstLetter = str.substr(0,1).toUpperCase();
+                //     return firstLetter + str.substr(1);
+                // }
+                // function sampleCapitalLetter(usrString) {
+                //     var workArray = usrString.split('_');
+                //     for (var i = 0; i < workArray.length; i++) {
+                //         workArray[i] = firstCapitalLetterInWord(workArray[i]);
+                //     }
+                //     document.write(workArray.join(''));
+                // }
+
+                // document.write('Начальная строка: ' + userWorkString + '<br>');
+                // sampleCapitalLetter(userWorkString);
+
+/////////////////////////////////////////////////////////////////
+
+                // var str ='abcde abcde abcde';
+                // var newArr = [];
+
+                // var arr = str.split(' ');
+                // for (var i = 0; i < arr.length; i++) {
+                //     newArr.push(ucfirst(arr[i]));
+                // }
+
+                // var newStr = newArr.join(' ');
+                // alert(newStr);
+
+                // function ucfirst(str) {
+                //     return str[0].toUpperCase() + str.substr(1);
+                // }
+
+                // Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+
+                    // вариант с ифом
+                // var str = 'var_text_hello';
+                // var newArr = [];
+                // var arr = str.split('_');
+                // for (var i = 1; i < arr.length; i++) {
+          
+            
+                    // if(i===0){
+                    //     newArr.push((arr[i]));
+                    // }
+                    // else{
+                    //     newArr.push(upper(arr[i]));
+                    // }
+                // }
+                // var newStr = newArr.join('');
+
+                // function upper(str) {
+                //     return str[0].toUpperCase() + str.substr(1);
+                // }
+                // document.write(newStr);
+
+                // вариант без ифа
+                // var str = 'var_text_hello'; 
+                // var arr = str.split('_'); 
+                // for (var i = 1; i < arr.length; i++) { 
+                //     arr[i] = upper(arr[i]); 
+
+                // } 
+                // var newStr = arr.join(''); 
+
+                // function upper(str) { 
+                //     return str[0].toUpperCase() + str.substr(1); 
+                // } 
+                // document.write(newStr);
+
+                // Дана строка, например, '123456'. Сделайте из нее '214365'.
+                // var str = '123456'; 
+                // function Nstr(line) { 
+                //     var arr = line.split(''); 
+                //     var NewArr = []; 
+                //     var Newstr = ''; 
+                //     console.log(arr); 
+                //     for (i=0; i < arr.length; i++) { 
+                //         NewArr.push(arr[1], arr[0], arr[3], arr[2], arr[4], arr[5]); 
+                //         console.log(NewArr); 
+                //         Newstr = NewArr.join(''); 
+                //         console.log(Newstr); 
+                //         return NewArr; 
+                //     } 
+                // } 
+                // Nstr(str);
+                 // document.write(NewArr);
+        </script>
+    </div>
+
+    <!-- container -->
+</body>
+</html>
